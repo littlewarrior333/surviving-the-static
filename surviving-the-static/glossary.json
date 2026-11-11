@@ -1,0 +1,54 @@
+{
+  "terms": {
+    "harness": "The dashboard, steering wheel, and chat window you use to interact with your AI (like Hermes Agent).",
+    "python": "The behind-the-scenes plumbing language that connects your AI apps together.",
+    "script": "A simple text file containing a step-by-step recipe of instructions for your computer.",
+    "inference": "The actual act of your AI engine 'thinking' and calculating its next reply.",
+    "terminal": "The text-only window on your computer—just a direct drive-thru for giving your PC simple orders.",
+    "gpu": "The heavy-lifting muscle in your computer that helps your AI think fast.",
+    "cpu": "The main manager of your computer that handles everyday tasks.",
+    "ram": "Your computer's short-term desk space. More space lets you run bigger AI brains smoothly.",
+    "local": "Running 100% on your own PC at home—no cloud limits, no waiting, total privacy.",
+    "token": "A tiny puzzle piece of a word. AI reads and writes one piece at a time.",
+    "model": "The actual 'brain' and personality file of your companion (like Lexi or Nemo).",
+    "context": "How much your AI can remember at once before its short-term memory desk gets full.",
+    "host": "The computer giving your AI a home to run on (your own PC).",
+    "server": "A background helper (like LM Studio) that keeps your AI brain awake and ready to chat.",
+    "port": "A numbered 'door' on your computer (like 1234) that lets local apps talk to each other.",
+    "command": "A short, direct order you type into the terminal.",
+    "path": "The exact folder address telling your computer where a file lives.",
+    "gateway": "The bridge that connects two different apps together safely."
+  },
+  "errors": {
+    "ECONNREFUSED": {
+      "title": "Knocking on an Empty House",
+      "explanation": "Take a deep breath. You didn't break anything! Hermes is knocking on LM Studio's door, but the local engine isn't turned on yet.",
+      "next_step": "Open LM Studio, go to the Local Server tab, and click 'Start Server'. Then try again. We've got this!"
+    },
+    "EADDRINUSE": {
+      "title": "A Locked or Busy Door (Port Lock)",
+      "explanation": "It's okay! Two programs are trying to use the exact same numbered door (Port) on your computer at the same time, so the door locked to prevent a traffic jam.",
+      "next_step": "Check if you accidentally have two copies of LM Studio or Hermes open in the background. Close the extra window, or switch the port number in settings (like changing 1234 to 1235)."
+    },
+    "500": {
+      "title": "The Engine Hiccuped (500 Server Error)",
+      "explanation": "Take a slow breath—this is not your fault. The local server tripped over a request inside its own kitchen and couldn't finish cooking up the reply.",
+      "next_step": "Click 'Stop Server' and then 'Start Server' inside LM Studio to give the engine a quick reset, then resend your message."
+    },
+    "RecursionError": {
+      "title": "Running in Circles (Stack Overflow)",
+      "explanation": "Your AI got stuck in a loop asking itself the exact same question over and over until its desk overflowed. Your PC is completely safe!",
+      "next_step": "Close the current chat session and open a fresh one so your companion can clear its head and start clean."
+    },
+    "ModuleNotFoundError": {
+      "title": "A Missing Puzzle Piece",
+      "explanation": "Your computer is looking for a helper tool file it needs, but it can't find the right folder address.",
+      "next_step": "Double-check that your folder 'Path' matches where you saved your plugin, or run 'pip install' for the missing tool."
+    },
+    "max tokens": {
+      "title": "Brain Stretch Time",
+      "explanation": "Our chat got so wonderfully long that my short-term memory desk is completely full!",
+      "next_step": "Type 'continue' to nudge me forward, or restart Hermes for a fresh slate."
+    }
+  }
+}

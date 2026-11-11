@@ -1,0 +1,7 @@
+name: surviving-the-static
+description: "Translates intimidating local AI and LM Studio connection errors into plain, comforting English and grows dynamically."
+version: "1.0.0"
+author: "Jenn92030"
+provides_tools:
+  - translate_error
+  - add_new_term
