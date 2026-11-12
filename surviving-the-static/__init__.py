@@ -15,8 +15,9 @@ def save_glossary(data):
     with open(GLOSSARY_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
-def translate_error(error_text: str) -> str:
+def translate_error(args, **kw) -> str:
     """Translates a raw technical error into plain, friendly terms."""
+    error_text = args.get("error_text", "")
     glossary = load_glossary()
     key = error_text.strip().upper()
     
@@ -32,8 +33,10 @@ def translate_error(error_text: str) -> str:
             
     return f"I haven't logged '{error_text}' in our living guide yet, but let's add it so nobody else has to guess!"
 
-def add_new_term(term: str, explanation: str) -> str:
+def add_new_term(args, **kw) -> str:
     """Adds a new error or term to the living glossary permanently."""
+    term = args["term"]
+    explanation = args["explanation"]
     glossary = load_glossary()
     if "terms" not in glossary:
         glossary["terms"] = {}
