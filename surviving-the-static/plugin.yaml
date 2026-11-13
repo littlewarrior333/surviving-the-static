@@ -1,7 +1,16 @@
 name: surviving-the-static
-description: "Translates intimidating local AI and LM Studio connection errors into plain, comforting English and grows dynamically."
+repo: https://github.com/littlewarrior333/surviving-the-static
+sha: ef850fa749c13b48b12b8cf2b56f0946f0b3c9f6
+subdir: surviving-the-static
+title: Surviving the Static
+description: Looks up local AI and LM Studio connection errors and jargon in a bundled glossary and explains them in plain English; the agent can add new terms.
+maintainer: littlewarrior333
+tier: community
+category: tools
+requires_hermes: ">=0.23.0"
 version: "1.0.0"
-author: "Jenn92030"
-provides_tools:
-  - translate_error
-  - add_new_term
+docs_url: https://github.com/littlewarrior333/surviving-the-static
+capabilities:
+  provides_tools:
+    - translate_error
+    - add_new_term
