@@ -1,17 +1,28 @@
 
 import json
 import os
+import shutil
 from pathlib import Path
 
-GLOSSARY_PATH = Path(__file__).parent / "glossary.json"
+DEFAULT_GLOSSARY = Path(__file__).parent / "glossary.json"
+HERMES_HOME = Path(os.environ.get("HERMES_HOME", Path.home() / ".hermes"))
+GLOSSARY_PATH = HERMES_HOME / "surviving-the-static" / "glossary.json"
+
+def _ensure_glossary():
+    if not GLOSSARY_PATH.exists():
+        GLOSSARY_PATH.parent.mkdir(parents=True, exist_ok=True)
+        if DEFAULT_GLOSSARY.exists():
+            shutil.copy2(DEFAULT_GLOSSARY, GLOSSARY_PATH)
 
 def load_glossary():
+    _ensure_glossary()
     if not GLOSSARY_PATH.exists():
         return {}
     with open(GLOSSARY_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
 def save_glossary(data):
+    _ensure_glossary()
     with open(GLOSSARY_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
